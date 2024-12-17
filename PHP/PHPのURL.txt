@@ -1,0 +1,1 @@
+http://localhost/get_user.php?id=1&random_key=100
