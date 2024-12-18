@@ -20,7 +20,7 @@ echo " random_key " . $query_param_random_key."<br>";
 
 $pdo = getPDO();
 
-// idが1のレコードを検索
+// 入力されたIDのrandom_keyを取得.
 $stmt = $pdo->prepare('SELECT random_key FROM users WHERE id = :id');
 $stmt->execute(['id' => $query_param_id]);
 $record = $stmt->fetch();
@@ -49,10 +49,13 @@ if ($record) {
 } else {
     // レコードが存在しない場合、新しいレコードを作成
     $random_key = rand(1, 999999);
-    echo "new random_key " . $random_key;
+    echo "new random_key " . $random_key . "<br>";
     $stmt = $pdo->prepare('INSERT INTO users (random_key) VALUES (:random_key)');
     $stmt->execute(['random_key' => $random_key]);
-    echo "New record created with Unique Key: " . $random_key;
+    $insert_record = $stmt->fetch();
+
+    $newId = $pdo->lastInsertId();
+    echo "New record id " . $newId . " random_key " . $random_key;
 }
 
 ?>

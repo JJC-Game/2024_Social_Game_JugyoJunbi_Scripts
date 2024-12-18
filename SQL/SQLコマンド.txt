@@ -11,3 +11,16 @@ select now();
 
 SET GLOBAL time_zone = 'Asia/Tokyo';
 
+CREATE TABLE user_gacha (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT,
+    last_update TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    user_has_chara_flag INT UNSIGNED
+);
+
+CREATE TABLE test_6_table (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    param INT
+);
+
+INSERT INTO test_6_table (param) VALUES (123);
