@@ -48,7 +48,7 @@ if ($record) {
     }
 } else {
     // レコードが存在しない場合、新しいレコードを作成
-    $random_key = rand(1, 999999);
+    $random_key = mt_rand(1, 999999);
     echo "new random_key " . $random_key . "<br>";
     $stmt = $pdo->prepare('INSERT INTO users (random_key) VALUES (:random_key)');
     $stmt->execute(['random_key' => $random_key]);
