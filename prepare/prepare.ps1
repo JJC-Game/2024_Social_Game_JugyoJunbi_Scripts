@@ -4,11 +4,14 @@ $projectRootPath = Join-Path $jjcRootPath "2024_Social_Game"
 $pathArray = @();
 $pathArray += $jjcRootPath
 $pathArray += $projectRootPath
-$pathArray += Join-Path $projectRootPath "xampp"
-$pathArray += Join-Path $projectRootPath "Unity"
-$pathArray += Join-Path $projectRootPath "PHP"
-$pathArray += Join-Path $projectRootPath "Key"
-$pathArray += Join-Path $projectRootPath "Daily"
+$pathArray += Join-Path $projectRootPath "00_Text"
+$pathArray += Join-Path $projectRootPath "01_XAMPP"
+$pathArray += Join-Path $projectRootPath "02_HTML"
+$pathArray += Join-Path $projectRootPath "03_PHP"
+$pathArray += Join-Path $projectRootPath "04_SQL"
+$pathArray += Join-Path $projectRootPath "05_Key"
+$pathArray += Join-Path $projectRootPath "06_Unity"
+$pathArray += Join-Path $projectRootPath "07_Java"
 
 foreach($path in $pathArray){
 
